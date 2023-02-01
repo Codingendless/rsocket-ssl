@@ -1,0 +1,12 @@
+spring:
+  rsocket:
+    server:
+      port: 9527
+      ssl:
+        enabled: true
+        client-auth: none
+        protocol: TLS
+        enabled-protocols: TLSv1.2
+        key-store: classpath:keystore/keystore.p12
+        key-store-type: pkcs12
+        key-store-password: fortycoderplus

@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+---
+fortycoderplus:
+  rsocket:
+    server:
+      host: 127.0.0.1
+      port: 9527
+    ssl:
+      trust-store: classpath:keystore/truststore.p12
+      trust-store-type: pkcs12
+      trust-store-password: fortycoderplus
