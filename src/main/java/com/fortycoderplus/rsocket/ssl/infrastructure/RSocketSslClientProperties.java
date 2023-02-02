@@ -20,12 +20,12 @@
 
 package com.fortycoderplus.rsocket.ssl.infrastructure;
 
-import java.io.File;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.core.io.Resource;
 
 @ConfigurationProperties(prefix = "fortycoderplus.rsocket")
 public record RSocketSslClientProperties(Server server, Ssl ssl) {
     record Server(String host, int port) {}
 
-    record Ssl(File trustStore, String trustStoreType, String trustStorePassword) {}
+    record Ssl(Resource trustStore, String trustStoreType, String trustStorePassword) {}
 }

@@ -24,7 +24,6 @@ import com.fortycoderplus.rsocket.ssl.infrastructure.RSocketSslClientProperties.
 import io.netty.handler.ssl.SslContextBuilder;
 import io.rsocket.transport.ClientTransport;
 import io.rsocket.transport.netty.client.TcpClientTransport;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -48,7 +47,7 @@ public class SslTransportFactory {
                     TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             KeyStore keyStore = KeyStore.getInstance(sslConf.trustStoreType());
             keyStore.load(
-                    new FileInputStream(sslConf.trustStore()),
+                    sslConf.trustStore().getInputStream(),
                     sslConf.trustStorePassword().toCharArray());
             trustManagerFactory.init(keyStore);
             return TcpClientTransport.create(
