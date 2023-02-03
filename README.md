@@ -1,8 +1,8 @@
 # RSocket Sample with SSL
 
-Start server with profile `server` or with env `RSOCKET_CLOUDEVENTS_PROFILE=server`
+Start server with profile `server` or with env `RSOCKET_SSL_PROFILE=server`
 
-Start client with profile `client` or with env `RSOCKET_CLOUDEVENTS_PROFILE=client`
+Start client with profile `client` or with env `RSOCKET_SSL_PROFILE=client`
 
 # PKCS12 Key
 

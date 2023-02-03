@@ -2,7 +2,7 @@ spring:
   application:
     name: rsocket-cloudevents
   profiles:
-    active: ${RSOCKET_CLOUDEVENTS_PROFILE:server}
+    active: ${RSOCKET_SSL_PROFILE:server}
 
 ---
 logging:
