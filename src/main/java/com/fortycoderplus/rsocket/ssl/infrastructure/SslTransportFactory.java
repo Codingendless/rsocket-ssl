@@ -39,9 +39,7 @@ import reactor.netty.tcp.TcpClient;
 @AllArgsConstructor
 public class SslTransportFactory {
 
-    private final Ssl sslConf;
-
-    public ClientTransport sslClientTransport(String host, int port) {
+    public ClientTransport sslClientTransport(Ssl sslConf, String host, int port) {
         try {
             TrustManagerFactory trustManagerFactory =
                     TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());

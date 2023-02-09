@@ -44,8 +44,10 @@ public class RSocketSslClientConfigure {
                 .rsocketStrategies(rsocketStrategies)
                 .rsocketConnector(connector -> connector.reconnect(Retry.fixedDelay(2, Duration.ofSeconds(2))))
                 .dataMimeType(valueOf(APPLICATION_CBOR.getString()))
-                .transport(new SslTransportFactory(properties.ssl())
+                .transport(new SslTransportFactory()
                         .sslClientTransport(
-                                properties.server().host(), properties.server().port()));
+                                properties.ssl(),
+                                properties.server().host(),
+                                properties.server().port()));
     }
 }
